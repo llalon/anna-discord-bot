@@ -22,4 +22,4 @@ def invite(msg_args):
     if not msg_args:
         return("ERROR: Invalid Arguments")
     
-    return("You requested: " + msg_args)
+    return("Invite sent to: " + msg_args)
