@@ -10,6 +10,8 @@ Request movie or tv show (enter name exactly the same as it shows up on wikipedi
 ```!request title of thing```
 Show this help message
 ```!help```
+If something isnt working let me know using
+```!issue whats the problem is```
 """
     
     return(help_msg)
@@ -33,3 +35,7 @@ def invite(msg_args):
         return("ERROR: Invalid Arguments")
     
     return("Invite sent to: " + msg_args)
+
+def send_feedback(msg_args):
+    print(msg_args)
+    return("Thanks for your feedback!")

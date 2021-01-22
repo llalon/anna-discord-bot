@@ -9,7 +9,8 @@ import func
 commands = {
     'help': func.show_help,
     'request': func.request,
-    'invite': func.invite
+    'invite': func.invite,
+    'issue': func.send_feedback
 }
 
 
