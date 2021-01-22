@@ -2,29 +2,36 @@
 import discord
 import os
 import APIKEY
+import func
 
-### Some Constants
-# Which discord channel to mo
-MONITOR_CHANNEL = 'debug'
-TOKEN = 'discord token'
+
+# Command delcarations
+commands = {
+    'help': func.show_help,
+    'request': func.request,
+    'invite': func.invite
+}
+
 
 client = discord.Client()
 
 @client.event
 async def on_ready():
-  print('We have logged in as {0.user}'.format(client))
+    print('We have logged in as {0.user}'.format(client))
 
 @client.event
 async def on_message(message):
-  if message.author == client.user:
-    return
+    if message.author == client.user:
+        return
 
-  if message.content.startswith('$inspire'):
-    msg = "testmsg"
-    await message.channel.send(quote)
+    # Parse commands
+    for c in commands:
+        if (message.content.startswith('!' + c)):
+            msg_arg = " ".join(str(message.content).split()[1:])
+            msg = commands[c](msg_arg)
+            
+            await message.channel.send(msg)
 
-#client.run(APIKEY.TOKEN)
 
 if __name__ == "__main__":
-    print(MONITOR_CHANNEL)
-    print(APIKEY.TOKEN)
+    client.run(APIKEY.TOKEN)
