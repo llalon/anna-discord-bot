@@ -4,7 +4,6 @@ import os
 import APIKEY
 import func
 
-
 # Command delcarations
 commands = {
     'help': func.show_help,
@@ -33,6 +32,8 @@ async def on_message(message):
             
             await message.channel.send(msg)
 
+def init_anna():
+    client.run(APIKEY.DISCORD_TOKEN)
 
 if __name__ == "__main__":
-    client.run(APIKEY.TOKEN)
+    init_anna()
