@@ -9,9 +9,7 @@ value = function to be run (Function should return a message the bot will reply 
 
 ```python
 commands = {
-    'help': func.show_help,
-    'request': func.request,
-    'invite': func.invite,
-    'issue': func.send_feedback
+    'command': function_to_run,
+    ...
 }
 ```
