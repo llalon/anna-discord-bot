@@ -1,6 +1,3 @@
 discord.py
 tmdbsimple
-<<<<<<< HEAD
 influxpy
-=======
->>>>>>> main
