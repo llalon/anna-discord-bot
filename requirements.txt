@@ -1,1 +1,3 @@
-discord.py tmdbsimple
+discord.py
+tmdbsimple
+influxpy

@@ -1,7 +1,7 @@
 import os
 import re
 import tmdbsimple as tmdb
-import APIKEY
+import settings
 
 
 def show_help(msg_args):
@@ -29,7 +29,7 @@ def search(msg_args):
     if not msg_args:
         return("ERROR: Invalid Arguments")
 
-    tmdb.API_KEY = APIKEY.TMDB_TOKEN
+    tmdb.API_KEY = settings.TMDB_TOKEN
     search = tmdb.Search()
     response = search.movie(query=msg_args)
 

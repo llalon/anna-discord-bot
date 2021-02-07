@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import discord
 import os
-import APIKEY
+import settings
 import func
 
 # Command delcarations
@@ -35,7 +35,7 @@ async def on_message(message):
 
 
 def init_anna():
-    client.run(APIKEY.DISCORD_TOKEN)
+    client.run(settings.DISCORD_TOKEN)
 
 
 if __name__ == "__main__":
