@@ -29,8 +29,7 @@ async def on_message(message):
     # Parse commands
     for c in commands:
         if (message.content.startswith('!' + c)):
-            msg_arg = " ".join(str(message.content).split()[1:])
-            msg = commands[c](msg_arg)
+            msg = commands[c](message)
             await message.channel.send(msg)
 
 

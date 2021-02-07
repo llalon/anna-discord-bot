@@ -2,9 +2,10 @@ import os
 import re
 import tmdbsimple as tmdb
 import settings
+import dbtool
 
 
-def show_help(msg_args):
+def show_help(msg):
 
     help_msg = """
     **Commands:**
@@ -23,9 +24,12 @@ def show_help(msg_args):
     return(help_msg)
 
 
-def search(msg_args):
+def search(msg):
     """Search for a movie or TV show and return the IDs and other info.
     """
+
+    msg_args = " ".join(str(msg.content).split()[1:])
+
     if not msg_args:
         return("ERROR: Invalid Arguments")
 
@@ -47,14 +51,27 @@ def search(msg_args):
     return("Search results for " + msg_args + ":\n" + reply)
 
 
-def request(msg_args):
+def request(msg):
+
+    msg_args = " ".join(str(msg.content).split()[1:])
+    msg_auth = str(msg.author)
+
+    title = msg_args
+    id = -999
+
     if not msg_args:
         return("ERROR: Invalid Arguments")
+
+    # Log the request
+    dbtool.log_request(msg_args, id, msg_auth)
 
     return("You requested: " + msg_args)
 
 
-def invite(msg_args):
+def invite(msg):
+
+    msg_args = " ".join(str(msg.content).split()[1:])
+
     reg = '^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$'
 
     if not msg_args:
@@ -68,11 +85,8 @@ def invite(msg_args):
     return("Invite sent to: " + msg_args)
 
 
-def send_feedback(msg_args):
-    print(msg_args)
+def send_feedback(msg):
+
+    msg_args = " ".join(str(msg.content).split()[1:])
+
     return("Thanks for your feedback!")
-
-
-# DEBUG
-if __name__ == "__main__":
-    request("Toy Story")
