@@ -9,7 +9,7 @@ commands = {
     'help': func.show_help,
     'request': func.request,
     'invite': func.invite,
-    'issue': func.send_feedback,
+    'feedback': func.send_feedback,
     'search': func.search
 }
 
