@@ -10,7 +10,8 @@ commands = {
     'request': func.request,
     'invite': func.invite,
     'issue': func.send_feedback,
-    'search': func.search
+    'search': func.search,
+    'top': func.leader_board
 }
 
 client = discord.Client()
