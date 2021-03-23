@@ -1,10 +1,5 @@
 # API Keys
 DISCORD_TOKEN = ''
-TMDB_TOKEN = ''
 
-# Influx DB
-INFLUXDB_IP = ''
-INFLUXDB_PORT = ''
-INFLUXDB_USER = ''
-INFLUXDB_PASS = ''
-INFLUXDB_DB = ''
+# USER SCRIPTS LOCATION
+SCR_DIR = '/opt/scripts'
